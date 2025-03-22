@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import './styles.css';
   
   let city = '';
   let weatherData = null;
@@ -69,98 +70,3 @@
     {/if}
   </div>
 </main>
-
-<style>
-  main {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #00b4db, #0083b0);
-    padding: 20px;
-  }
-
-  .container {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 100%;
-  }
-
-  h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 2rem;
-  }
-
-  .search-box {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 2rem;
-  }
-
-  input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-
-  button {
-    padding: 10px 20px;
-    background: #0083b0;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s;
-  }
-
-  button:hover {
-    background: #006d94;
-  }
-
-  .weather-card {
-    text-align: center;
-  }
-
-  .weather-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1rem 0;
-  }
-
-  .temperature {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #333;
-  }
-
-  .description {
-    text-transform: capitalize;
-    color: #666;
-    font-size: 1.2rem;
-  }
-
-  .details {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 1rem;
-    color: #666;
-  }
-
-  .loading, .error {
-    text-align: center;
-    padding: 1rem;
-    color: #666;
-  }
-
-  .error {
-    color: #ff4444;
-  }
-</style>
