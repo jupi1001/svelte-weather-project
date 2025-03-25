@@ -1,11 +1,12 @@
-<script>
-  import { onMount } from 'svelte';
-  import './styles.css';
+<script lang="ts">
+  import { goto } from '$app/navigation';
+  import '../../styles/weather.css';
+  import type { WeatherData } from '../../types/weather';
   
   let city = '';
-  let weatherData = null;
+  let weatherData: WeatherData | null = null;
   let loading = false;
-  let error = null;
+  let error: string | null = null;
   
   const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
   
@@ -24,18 +25,26 @@
         throw new Error('City not found');
       }
       
-      weatherData = await response.json();
+      weatherData = await response.json() as WeatherData;
     } catch (e) {
-      error = e.message;
+      error = e instanceof Error ? e.message : 'An error occurred';
     } finally {
       loading = false;
     }
+  }
+  
+  function handleLogout() {
+    fetch('/api/logout', { method: 'POST' })
+      .then(() => goto('/'));
   }
 </script>
 
 <main>
   <div class="container">
-    <h1>Weather Forecast</h1>
+    <div class="header">
+      <h1>Weather Forecast</h1>
+      <button class="logout-btn" on:click={handleLogout}>Logout</button>
+    </div>
     
     <div class="search-box">
       <input
