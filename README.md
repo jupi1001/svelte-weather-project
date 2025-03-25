@@ -1,6 +1,10 @@
 # Weather App
 
-A modern weather application built with SvelteKit that allows users to check weather conditions for any city. Features include user authentication, real-time weather data, and a clean, responsive interface.
+A modern weather application built with SvelteKit that allows users to check weather conditions for any city. Features include user authentication, real-time weather data, and using the store with runes feature.
+
+## Hosted on vercel
+
+https://svelte-weather-project-q7mwlozwg-jupis-projects-949da12a.vercel.app/
 
 ## Features
 
@@ -12,7 +16,7 @@ A modern weather application built with SvelteKit that allows users to check wea
 
 ## Prerequisites
 
-- Node.js (v16 or higher)
+- Node.js (v20 or higher)
 - npm (v7 or higher)
 - OpenWeather API key
 
