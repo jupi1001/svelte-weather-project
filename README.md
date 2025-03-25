@@ -30,6 +30,7 @@ https://svelte-weather-project-q7mwlozwg-jupis-projects-949da12a.vercel.app/
 3. Create a `.env` file in the root directory and add your OpenWeather API key:
    ```
    VITE_OPENWEATHER_API_KEY=your_api_key_here
+   VITE_USER_PASSWORD =
    ```
 4. Run SvelteKit sync to ensure all dependencies are properly configured:
    ```bash
