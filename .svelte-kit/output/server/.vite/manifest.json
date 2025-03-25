@@ -8,49 +8,59 @@
       "_internal.js"
     ]
   },
+  "_attributes.js": {
+    "file": "chunks/attributes.js",
+    "name": "attributes",
+    "imports": [
+      "_client.js"
+    ]
+  },
   "_client.js": {
     "file": "chunks/client.js",
     "name": "client",
     "imports": [
       "_exports.js",
-      "_ssr2.js"
+      "_equality.js"
     ]
+  },
+  "_equality.js": {
+    "file": "chunks/equality.js",
+    "name": "equality"
   },
   "_exports.js": {
     "file": "chunks/exports.js",
-    "name": "exports"
+    "name": "exports",
+    "imports": [
+      "_equality.js"
+    ]
   },
   "_index.js": {
     "file": "chunks/index.js",
+    "name": "index"
+  },
+  "_index2.js": {
+    "file": "chunks/index2.js",
     "name": "index"
   },
   "_internal.js": {
     "file": "chunks/internal.js",
     "name": "internal",
     "imports": [
-      "_ssr.js",
-      "_ssr2.js"
+      "_equality.js",
+      "_index2.js"
     ],
     "dynamicImports": [
       "src/hooks.server.js"
     ]
   },
-  "_ssr.js": {
-    "file": "chunks/ssr.js",
-    "name": "ssr"
-  },
-  "_ssr2.js": {
-    "file": "chunks/ssr2.js",
-    "name": "ssr"
-  },
-  "node_modules/@sveltejs/kit/src/runtime/components/svelte-4/error.svelte": {
+  "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte": {
     "file": "entries/fallbacks/error.svelte.js",
     "name": "entries/fallbacks/error.svelte",
-    "src": "node_modules/@sveltejs/kit/src/runtime/components/svelte-4/error.svelte",
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js",
-      "_client.js"
+      "_client.js",
+      "_index2.js"
     ]
   },
   "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
@@ -61,8 +71,7 @@
     "imports": [
       "_internal.js",
       "_index.js",
-      "_exports.js",
-      "_ssr.js"
+      "_exports.js"
     ]
   },
   "src/hooks.server.js": {
@@ -86,7 +95,7 @@
     "src": "src/routes/+layout.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js"
+      "_index2.js"
     ],
     "css": [
       "_app/immutable/assets/_layout.DzRhPmj6.css"
@@ -98,7 +107,8 @@
     "src": "src/routes/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js",
+      "_attributes.js",
+      "_index2.js",
       "_client.js"
     ],
     "css": [
@@ -123,17 +133,24 @@
       "_index.js"
     ]
   },
+  "src/routes/weather/+page.js": {
+    "file": "entries/pages/weather/_page.js",
+    "name": "entries/pages/weather/_page",
+    "src": "src/routes/weather/+page.js",
+    "isEntry": true
+  },
   "src/routes/weather/+page.svelte": {
     "file": "entries/pages/weather/_page.svelte.js",
     "name": "entries/pages/weather/_page.svelte",
     "src": "src/routes/weather/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js",
+      "_attributes.js",
+      "_index2.js",
       "_client.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.CDMmbWpn.css"
+      "_app/immutable/assets/_page.CM0lBFoB.css"
     ]
   }
 }

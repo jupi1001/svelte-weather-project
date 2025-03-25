@@ -1,9 +1,16 @@
-import { c as create_ssr_component, d as add_attribute } from "../../../chunks/ssr.js";
+import { a as attr } from "../../../chunks/attributes.js";
+import { c as pop, p as push } from "../../../chunks/index2.js";
 import "../../../chunks/client.js";
-const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+function _page($$payload, $$props) {
+  push();
   let city = "";
-  return `<main><div class="container"><div class="header"><h1 data-svelte-h="svelte-flu1jl">Weather Forecast</h1> <button class="logout-btn" data-svelte-h="svelte-nk8agc">Logout</button></div> <div class="search-box"><input type="text" placeholder="Enter city name"${add_attribute("value", city)}> <button data-svelte-h="svelte-ktu0yk">Search</button></div> ${`${`${``}`}`}</div></main>`;
-});
+  $$payload.out += `<main><div class="container"><div class="header"><h1>Weather Forecast</h1> <button class="logout-btn">Logout</button></div> <div class="search-box"><input type="text"${attr("value", city)} placeholder="Enter city name"> <button>Search</button></div> `;
+  {
+    $$payload.out += "<!--[!-->";
+  }
+  $$payload.out += `<!--]--></div></main>`;
+  pop();
+}
 export {
-  Page as default
+  _page as default
 };

@@ -1,10 +1,17 @@
-import { c as create_ssr_component, d as add_attribute } from "../../chunks/ssr.js";
+import { a as attr } from "../../chunks/attributes.js";
+import { c as pop, p as push } from "../../chunks/index2.js";
 import "../../chunks/client.js";
-const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+function _page($$payload, $$props) {
+  push();
   let username = "";
   let password = "";
-  return `<main><div class="container"><h1 data-svelte-h="svelte-1ruee2">Welcome to Weather App</h1> <div class="login-form"><h2 data-svelte-h="svelte-bhb3ah">Login</h2> ${``} <form><div class="form-group"><label for="username" data-svelte-h="svelte-1wr0xay">Username</label> <input type="text" id="username" placeholder="Enter your username" required${add_attribute("value", username)}></div> <div class="form-group"><label for="password" data-svelte-h="svelte-pepa0a">Password</label> <input type="password" id="password" placeholder="Enter your password" required${add_attribute("value", password)}></div> <button type="submit" data-svelte-h="svelte-1yamoz0">Login</button></form></div></div></main>`;
-});
+  $$payload.out += `<main><div class="container"><h1>Welcome to Weather App</h1> <div class="login-form"><h2>Login</h2> `;
+  {
+    $$payload.out += "<!--[!-->";
+  }
+  $$payload.out += `<!--]--> <form><div class="form-group"><label for="username">Username</label> <input type="text" id="username"${attr("value", username)} placeholder="Enter your username" required></div> <div class="form-group"><label for="password">Password</label> <input type="password" id="password"${attr("value", password)} placeholder="Enter your password" required></div> <button type="submit">Login</button></form></div></div></main>`;
+  pop();
+}
 export {
-  Page as default
+  _page as default
 };
